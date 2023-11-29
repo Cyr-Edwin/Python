@@ -1,0 +1,1 @@
+## This script is used to check endpoints and will throw an error when the URL doesn't have HTTP. (For example, indeed.ft won't work but http://indeed.com will.)
