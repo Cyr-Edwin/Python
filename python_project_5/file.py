@@ -9,11 +9,11 @@ def listed_files(path):
         fls = os.listdir(path)
         return fls, None
     except FileNotFoundError as error:
-        return None,"File not found"
+        return None ,"File not found"
     except PermissionError as error:
-        return None,"Permission denied"
+        return None ,"Permission denied"
     except NotADirectoryError as error:
-        return None , "Not a directory"
+        return None ,"Not a directory"
 
 
 def files():
