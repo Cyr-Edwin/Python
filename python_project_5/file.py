@@ -8,10 +8,8 @@ def listed_files(path):
         # list folders present in the directory
         fls = os.listdir(path)
         return fls, None
-
     except FileNotFoundError as error:
         return None,"File not found"
-
     except PermissionError as error:
         return None,"Permission denied"
     except NotADirectoryError as error:
