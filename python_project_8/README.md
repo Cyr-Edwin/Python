@@ -26,7 +26,7 @@ print(response.text)
 import json
 
 # Initialize the json string
-country_json = '{"Country": "USA","States": [, "Texas","California"],"Lakes_Available":"Yes"}'
+country_json = '{"Country": "USA","States": ["Texas","California"],"Lakes_Available":"Yes" , "Mobil": "NO"}'
 
 # Using json.loads()
 # Converting json to dictionary
