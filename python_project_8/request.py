@@ -5,9 +5,9 @@ import json
 # Github API endpoint
 url = 'https://api.github.com'
 
-
-# defide header and token
+# define header and token
 headers = {'Authorization':'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', 'Accept':'application/vnd.github.v3+json'}
+
 # get repo list
 def get_repo_list(username):
     api_endpoint = f"{url}/users/{username}/repos"
@@ -20,6 +20,7 @@ def get_repo_list(username):
 
 # Create a new GitHub repository using the GitHub API
 def create_github_repo(token, repo_name):
+    
     headers = {
         'Authorization': f'token {token}',
     }
@@ -38,5 +39,3 @@ def create_github_repo(token, repo_name):
     else:
         print(f"Error creating GitHub repository. Status code: {response.status_code}")
 
-
-create_github_repo('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', "example3")
