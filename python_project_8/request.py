@@ -39,3 +39,6 @@ def create_github_repo(token, repo_name):
     else:
         print(f"Error creating GitHub repository. Status code: {response.status_code}")
 
+# update the repository
+def update_repo():
+    pass      
