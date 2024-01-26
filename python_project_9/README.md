@@ -27,10 +27,10 @@
 
 * **sqlite3**
 
-* **haslib**
+* **bcrypt**
 
 * **barcode**
 
 <h6> Installation of libraries</h6>
 
-> pip3 install python-barcode
+> pip3 install bcrypt
