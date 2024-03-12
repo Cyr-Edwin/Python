@@ -66,6 +66,7 @@ CREATE TABLE IF NOT EXISTS accounts(
         self.cursor.execute('INSERT INTO accounts(acc_num, balance , credit_limit) VALUES(?, 0 ,0)',(acc_num))
         self.con.commit()
         print(self.cursor.fetchall())
+
     
     # create login
     def login(self, acc_num , password):
@@ -76,12 +77,36 @@ CREATE TABLE IF NOT EXISTS accounts(
             return response[0]
         else:
             return None
+    
+    # apply for credit
+    def credit_application(self , cus_id , amount):
+        acc_num = self.get_acc_num(cus_id)
+        self.cursor.execute('SELECT balance , credit_limit FROM accounts WHERE acc_num=?',(acc_num))
+        balance , credit_limit =self.cursor.fetchone()
+        if amount <= credit_limit:
+            self.cursor.excute('UPDATE accounts SET balance=? WHERE acc_num=?',(balance + amount, acc_num))
+            self.con.commit()
+            return f"Credit applied successfully.New balance:{balance + amount}"
+        else:
+            return "Insufficient credit limit"
+        
+    # withdraw
+        
+    # deposit
+        
+    # get balance
+    
+    # get account number
+    def get_acc_num(self , cus_id):
+        self.cursor.execute('SELECT acc_num FROM customers WHERE id =?',(cus_id))
+        return self.cursor.fetchone()[0]
 
 # Menu
 def menu():
     print("Create a Branch")
     print("Create a customer")
     print("Login")
+    print("Apply for Credit Cart")
 
 def create_branch(bank_system):
     branch_name = input("Enter branch name")

@@ -2,17 +2,16 @@
 from urllib.request import urlopen
 from urllib.error import HTTPError, URLError
 
-# Get URL from the User
+# get URL from the User
 url = input("Enter your URL here:")
 
-# Checked validity of the URL
+# checked validity of the URL
 try:
     # Example: url = "https://www.python.org/"
-    
     resp = urlopen(url)
     print("status code: " + str(resp.status))
-    print("Message: " + resp.reason)
-    print("Message: " + str(resp.headers))
+    print("Message Reason: " + resp.reason)
+    print("Message Headers: " + str(resp.headers))
 
 except HTTPError as err:
     # Example: url = "http://httpbin.org/status/404"
